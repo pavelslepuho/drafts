@@ -94,6 +94,24 @@ for (let i = '*'; i.length <= len; i = i + '*' + '*') {
     console.log(k + i);
 }
 
+// varian_2
+const lines = 5;
+let result9 = '';
+
+for (let i = 0; i <= 5; i++) {
+
+    for (let j = 0; j < lines - i; j++) {
+        result9 += " "; 
+    }
+
+    for (let k = 0; k <= i * 2; k++) {
+        result9 += "*";
+    }
+    result9 += "\n";
+}
+
+console.log(result9);
+
 // *
 for (let i = '*'; i.length < 8; i = i + '*') {
     console.log(i);
