@@ -70,3 +70,21 @@ function getTimeFromMinutes(m) {
 
 console.log(getTimeFromMinutes(-1));
 
+// Самое большое число
+function findMaxNumber(a, b, c, d) {
+    let arr = [a, b, c, d];
+    arr.forEach((item) => {
+        if (typeof(item) !== 'number' || item === '' || arr.length !== 4) {
+            arr = [0];
+        }
+    });
+    function myFunction(array) {
+        array.sort(function(a, b) {
+            return a - b;
+        });
+    }
+    myFunction(arr);
+    return arr[arr.length - 1];
+}
+
+console.log(findMaxNumber(20000, 325, 4356));
