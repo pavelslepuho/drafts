@@ -88,3 +88,54 @@ function findMaxNumber(a, b, c, d) {
 }
 
 console.log(findMaxNumber(20000, 325, 4356));
+
+// Фибоначчи
+
+// 1
+function fib(num) {
+    if (num <= 0 || typeof(num) !== 'number' || !Number.isInteger(num)) {
+        return '';
+    } else if (num > 1) {
+        let a = [0, 1];
+        let d = '';
+        for (let i = 2; i < num; i++) {
+            a[i] = a[i - 1] + a[i - 2];
+        }
+    
+        a.forEach((item) => {
+            d += `${item} `;
+        });
+        return d.slice(0, -1);
+    } else {
+        return '0';
+    }
+}
+
+console.log(fib(1));
+
+// 2
+function fib(num) {
+    if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+        return "";
+    }
+
+    let result = '';
+    let first = 0;
+    let second = 1;
+
+    for (let i = 0; i < num; i++) {
+        if (i + 1 === num) {
+            result += `${first}`;
+        } else {
+            result += `${first} `;
+        }
+
+        let third = first + second;
+        first = second;
+        second = third;
+    }
+
+    return result;
+}
+
+console.log(fib(1));
