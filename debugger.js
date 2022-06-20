@@ -24,26 +24,26 @@ const restorantData = {
     openNow: true
 };
 
-// 1
-function isOpen(prop) {
-    let answer = '';
-    prop ? answer = 'Открыто' : answer = 'Закрыто';
+// // 1
+// function isOpen(prop) {
+//     let answer = '';
+//     prop ? answer = 'Открыто' : answer = 'Закрыто';
 
-    return answer;
-}
+//     return answer;
+// }
 
-console.log(isOpen(restorantData.openNow.openNow));
+// console.log(isOpen(restorantData.openNow.openNow));
 
 // 2
-function isAverageLunchPriceTrue(fDish, sDish, average) {
-    if (+fDish.price.slice(0, -1) + +sDish.price.slice(0, -1) < +average.slice(0, -1)) {
-        return 'Цена ниже средней';
-    } else {
-        return 'Цена выше средней';
-    }
-}
+// function isAverageLunchPriceTrue(fDish, sDish, average) {
+//     if (+fDish.price.slice(0, -1) + +sDish.price.slice(0, -1) < +average.slice(0, -1)) {
+//         return 'Цена ниже средней';
+//     } else {
+//         return 'Цена выше средней';
+//     }
+// }
 
-console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+// console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
 
 // 3
 function transferWaitors(data) {
