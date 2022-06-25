@@ -66,7 +66,7 @@ function averageProgressByRecursion(data) {
         }
 
         return [total, data.length];
-        
+
     } else {
 
         let total = [0, 0];
@@ -83,12 +83,12 @@ function averageProgressByRecursion(data) {
 
 let result = averageProgressByRecursion(students);
 
-console.log(result[0]/result[1]);
+console.log(result[0] / result[1]);
 
 // Факториал
 
 function factorialLoop(num) {
-    if (typeof(num) === 'number' && Number.isInteger(num) && num >= 0) {
+    if (typeof (num) === 'number' && Number.isInteger(num) && num >= 0) {
         let i = 1;
         for (num; num > 0; num--) {
             i = i * num;
@@ -106,7 +106,7 @@ function factorialRecursion(num) {
         return 1;
     }
 
-    if (typeof(num) !== 'number' || !Number.isInteger(num) || num < 0) {
+    if (typeof (num) !== 'number' || !Number.isInteger(num) || num < 0) {
         return 'Ошибка!';
     } else if (num === 1) {
         return num;
@@ -129,3 +129,115 @@ function pow(x, n) {
 
 console.log(pow(2, 4));
 
+// делитель
+
+function dividerLoop(a, b) {
+    for (let i = a; i > 0; i--) {
+        if (a % i === 0 && b % i === 0) {
+            return i;
+        }
+    }
+}
+console.log(dividerLoop(43, 66));
+
+function dividerRecursion(a, b) {
+    if (b === 0) {
+        return a;
+    }
+
+    return dividerRecursion(b, a % b);
+}
+
+console.log(dividerRecursion(44, 66));
+
+// integer
+let arr = [];
+function integer(a, b) {
+
+    if (Math.ceil(a) === Math.floor(b)) {
+        arr.push(Math.ceil(a));
+        return arr;
+    } else {
+        arr.push(Math.ceil(a));
+        return integer(a + 1, b);
+    }
+
+}
+
+console.log(integer(1.2, 28.9));
+
+// sum of numbers
+function sumOfNumbers(array) {
+
+    if (array.length === 1) {
+        return array[0];
+    } else {
+        array[array.length - 2] = array[array.length - 2] + array[array.length - 1];
+        array.pop();
+        return sumOfNumbers(array);
+    }
+}
+
+console.log(sumOfNumbers([2, 4, 6, 1]));
+
+// exponent
+function exp(a, b) {
+    if (b === 1) {
+        return a;
+    } else {
+        return a * exp(a, b - 1);
+    }
+}
+
+console.log(exp(2, 4));
+
+// fibonacci
+
+let arrFib = [0, 1];
+
+function fib(n) {
+    if (n === 0) {
+        return 0;
+    } else if (n === 1) {
+        arrFib.pop();
+        return arrFib;
+    } else {
+        arrFib.push(0);
+        arrFib[arrFib.length - 1] = arrFib[arrFib.length - 2] + arrFib[arrFib.length - 3];
+        return fib(n - 1);
+    }
+}
+
+function fi(n) {
+    if (n === 0) {
+        return 0;
+    } else if (n === 1) {
+        return 1;
+    } else {
+        arrFib[arrFib.length - 1] = arrFib[arrFib.length - 2] + arrFib[arrFib.length - 3];
+        return fi(n - 1);
+    }
+}
+
+console.log(fi(6));
+
+function fir(n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fir(n - 1) + fir(n - 2);
+    }
+}
+
+console.log(fir(6));
+
+function fib2(n) {
+    if (n === 0) {
+        return [0, 1];
+    } else {
+        const [prev, next] = fib2(n - 1);
+        return [next, prev + next];
+    }
+}
+
+console.log(fib2(6)[0]);
