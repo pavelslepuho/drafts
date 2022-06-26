@@ -130,7 +130,6 @@ function pow(x, n) {
 console.log(pow(2, 4));
 
 // делитель
-
 function dividerLoop(a, b) {
     for (let i = a; i > 0; i--) {
         if (a % i === 0 && b % i === 0) {
@@ -192,7 +191,6 @@ function exp(a, b) {
 console.log(exp(2, 4));
 
 // fibonacci
-
 let arrFib = [0, 1];
 
 function fib(n) {
@@ -241,3 +239,16 @@ function fib2(n) {
 }
 
 console.log(fib2(6)[0]);
+
+// количество массивов
+function deepCount(a) {
+    let count = a.length;
+    for (let i = 0; i < count; i++) {
+        if (Array.isArray(a[i])) {
+            return count += deepCount(a[i]);
+        }
+    }
+    return count;
+}
+
+console.log(deepCount([1, 4, 5, 1, 6, ['dfg', 'rejtryj', 354, []]]));
